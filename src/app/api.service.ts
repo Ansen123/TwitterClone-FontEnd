@@ -10,4 +10,7 @@ export class ApiService {
   viewuser=()=>{
     return this.hpp.get("http://localhost:8080/viewUser")
   }
+  addUser=(data:any)=>{
+    return this.hpp.post("http://localhost:8080/addUser",data)
+  }
 }
