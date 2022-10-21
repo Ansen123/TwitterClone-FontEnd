@@ -13,6 +13,7 @@ name=""
 lName=""
 mobile=""
 userName=""
+pass=""
 email=""
 address=""
 
@@ -22,6 +23,7 @@ readvalues(){
     "lName":this.lName,
     "mobile":this.mobile,
     "userName":this.userName,
+    "pass":this.pass,
     "email":this.email,
     "address":this.address,
     
