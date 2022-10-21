@@ -11,6 +11,9 @@ import { ViewuserComponent } from './viewuser/viewuser.component';
 const appRoutes:Routes=[
   {
 path:"",component:LoginComponent
+  },
+  {
+    path:"view",component:ViewuserComponent
   }
 ]
 @NgModule({

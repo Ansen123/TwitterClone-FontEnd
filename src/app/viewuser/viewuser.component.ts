@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-viewuser',
@@ -7,8 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewuserComponent implements OnInit {
 
-  constructor() { }
+  constructor(private myapi:ApiService) {
+    this.fetchData()
 
+   }
+
+   fetchData=()=>{
+    this.myapi.viewuser().subscribe(
+      (data)=>{
+        this.userView=data
+      }
+    )
+   }
+userView:any=[]
   ngOnInit(): void {
   }
 

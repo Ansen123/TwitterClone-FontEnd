@@ -1,1 +1,48 @@
-<p>viewuser works!</p>
+
+        <div class="container mt-3">
+            <div class="row">
+                <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                  
+        
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Id</th>
+                                <th scope="col">First name</th>
+                                <th scope="col">Last Name</th>
+                                <th scope="col">mobile</th>
+                                <th scope="col">user name</th>
+                                <th scope="col">Email </th>
+                                <th scope="col">Address</th>
+                                
+                                
+                               
+                            </tr>
+                        </thead>
+                        <tbody>
+        
+                            <tr *ngFor = "let i of userView" >
+
+                                <td>{{i.id}}</td>
+                                <td>{{i.name}}</td>
+                                <td>{{i.lName}}</td>
+                                <td>{{i.mobile}}</td>
+                                <td>{{i.userName}}</td>
+                                <td>{{i.email}}</td>
+                                <td>{{i.address}}</td>
+                              
+                               
+                                
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+        
+                  
+                  
+                </div>
+            </div>
+        </div>
+      
+     
+    
