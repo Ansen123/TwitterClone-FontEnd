@@ -13,4 +13,7 @@ export class ApiService {
   addUser=(data:any)=>{
     return this.hpp.post("http://localhost:8080/addUser",data)
   }
+  login=(data:any)=>{
+    return this.hpp.post("http://localhost:8080/login",data)
+  }
 }

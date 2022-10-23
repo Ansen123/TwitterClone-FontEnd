@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-login',
@@ -8,23 +9,29 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private myrouter:Router) { }
-  username=""
-  password=""
+  constructor(private myrouter:Router,private myapi:ApiService) { }
+  userName=""
+  pass=""
   readValues=()=>{
     let data={
-      "username":this.username,
-      "password":this.password
-  
+      "userName":this.userName,
+      "pass":this.pass
     }
-    if(this.username=="admin" && this.password=="admin"){
-      this.myrouter.navigate(["/view"])
-    }
-    else{
-      alert("in valid")
-    }
-    console.log(data)
-    alert("Sucess")
+     console.log(data)
+     this.myapi.login(data).subscribe(
+      (response:any)=>{
+        if (response.length>0) {
+          this.myrouter.navigate(["/view"])
+     
+         
+        } else {
+          alert ("invalid")
+          
+          
+        }
+      }
+     )
+   
   }
     ngOnInit(): void {
     }
